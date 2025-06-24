@@ -23,11 +23,13 @@ public class PatientController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Patient> getPatientById(@PathVariable String id) {
-        Optional<Patient> patient = patientRepo.findById(id);
-        if (patient.isPresent()) {
-            return ResponseEntity.ok(patient.get());
+        Optional<Patient> optionalPatient = patientRepo.findById(id);
+
+        if (optionalPatient.isPresent()) {
+            Patient patient = optionalPatient.get();
+            return ResponseEntity.ok(patient);
         } else {
-            return ResponseEntity.notFound().build();
+            throw new PatientNotFoundException("Patient with ID " + id + " not found");
         }
     }
 
@@ -39,20 +41,23 @@ public class PatientController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable String id, @Valid @RequestBody Patient updatedPatient) {
-        Optional<Patient> existingPatient = patientRepo.findById(id);
-        if (existingPatient.isPresent()) {
-            Patient patient = existingPatient.get();
+        Optional<Patient> optionalPatient = patientRepo.findById(id);
+
+        if (optionalPatient.isPresent()) {
+            Patient patient = optionalPatient.get();
             patient.setName(updatedPatient.getName());
             patient.setAge(updatedPatient.getAge());
             patient.setGender(updatedPatient.getGender());
             patient.setMobile(updatedPatient.getMobile());
             patient.setAddress(updatedPatient.getAddress());
+
             Patient savedPatient = patientRepo.save(patient);
             return ResponseEntity.ok(savedPatient);
         } else {
-            return ResponseEntity.notFound().build();
+            throw new PatientNotFoundException("Patient with ID " + id + " not found");
         }
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePatient(@PathVariable String id) {
