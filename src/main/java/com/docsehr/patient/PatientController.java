@@ -1,6 +1,9 @@
 package com.docsehr.patient;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +20,23 @@ public class PatientController {
     private PatientRepository patientRepo;
 
     @GetMapping
-    public List<Patient> getAllPatients() {
-        return patientRepo.findAll();
+    public ResponseEntity<List<Patient>> searchPatients(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String gender) {
+
+        List<Patient> patients;
+
+        if (name != null && gender != null) {
+            patients = patientRepo.findByNameContainingIgnoreCaseAndGenderIgnoreCase(name, gender);
+        } else if (name != null) {
+            patients = patientRepo.findByNameContainingIgnoreCase(name);
+        } else if (gender != null) {
+            patients = patientRepo.findByGenderIgnoreCase(gender);
+        } else {
+            patients = patientRepo.findAll();
+        }
+
+        return ResponseEntity.ok(patients);
     }
 
     @GetMapping("/{id}")
@@ -31,6 +49,17 @@ public class PatientController {
         } else {
             throw new PatientNotFoundException("Patient with ID " + id + " not found");
         }
+    }
+
+    @GetMapping("/paged")
+    public ResponseEntity<Page<Patient>> getPatientsWithPagination(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Patient> pagedResult = patientRepo.findAll(pageable);
+
+        return ResponseEntity.ok(pagedResult);
     }
 
     @PostMapping
