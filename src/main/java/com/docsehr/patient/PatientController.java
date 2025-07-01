@@ -7,8 +7,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,6 +70,39 @@ public class PatientController {
         Patient savedPatient = patientRepo.save(patient);
         return new ResponseEntity<>(savedPatient, HttpStatus.CREATED);
     }
+
+    @PostMapping("/{id}/upload")
+    public ResponseEntity<String> uploadDocument(
+            @PathVariable String id,
+            @RequestPart("file") MultipartFile file) {
+
+        Optional<Patient> optionalPatient = patientRepo.findById(id);
+        if (!optionalPatient.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Patient not found");
+        }
+
+        try {
+            String fileName = file.getOriginalFilename().replaceAll("\\s+", "_");
+
+            String uploadDir = System.getProperty("user.dir") + File.separator + "uploads";
+            File folder = new File(uploadDir);
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+
+            File savedFile = new File(folder, fileName);
+            file.transferTo(savedFile);
+
+            return ResponseEntity.ok("File saved to: " + savedFile.getAbsolutePath());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to save file");
+        }
+    }
+
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable String id, @Valid @RequestBody Patient updatedPatient) {

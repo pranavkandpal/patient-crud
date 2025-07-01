@@ -33,4 +33,7 @@ public class Patient {
 
     @NotBlank(message = "Address is required")
     private String address;
+
+    private String documentName;
+    private String documentPath;
 }
