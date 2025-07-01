@@ -82,6 +82,7 @@ public class PatientController {
         }
 
         try {
+            //Cleaning file name and uploading to local dir
             String fileName = file.getOriginalFilename().replaceAll("\\s+", "_");
 
             String uploadDir = System.getProperty("user.dir") + File.separator + "uploads";
@@ -93,7 +94,13 @@ public class PatientController {
             File savedFile = new File(folder, fileName);
             file.transferTo(savedFile);
 
-            return ResponseEntity.ok("File saved to: " + savedFile.getAbsolutePath());
+            // to DB
+            Patient patient = optionalPatient.get();
+            patient.setDocumentName(fileName);
+            patient.setDocumentPath(savedFile.getAbsolutePath());
+            patientRepo.save(patient);
+
+            return ResponseEntity.ok("File uploaded and saved to patient");
 
         } catch (Exception e) {
             e.printStackTrace();
