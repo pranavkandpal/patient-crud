@@ -1,5 +1,8 @@
-package com.docsehr.patient;
+package com.docsehr.patient.controller;
 
+import com.docsehr.patient.exception.PatientNotFoundException;
+import com.docsehr.patient.repository.PatientRepository;
+import com.docsehr.patient.model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -82,7 +84,7 @@ public class PatientController {
         }
 
         try {
-            //Cleaning file name and uploading to local dir
+            //Cleaning file name & uploading to local dir
             String fileName = file.getOriginalFilename().replaceAll("\\s+", "_");
 
             String uploadDir = System.getProperty("user.dir") + File.separator + "uploads";

@@ -1,4 +1,4 @@
-package com.docsehr.patient;
+package com.docsehr.patient.exception;
 
 public class PatientNotFoundException extends RuntimeException {
 

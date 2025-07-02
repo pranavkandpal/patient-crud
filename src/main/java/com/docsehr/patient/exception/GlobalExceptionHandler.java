@@ -1,4 +1,4 @@
-package com.docsehr.patient;
+package com.docsehr.patient.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
