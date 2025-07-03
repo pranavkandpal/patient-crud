@@ -1,0 +1,2698 @@
+{
+	"info": {
+		"_postman_id": "d3845cca-fdad-45a4-91c3-341921314d27",
+		"name": "Patient APi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45732010",
+		"_collection_link": "https://pranav-1980723.postman.co/workspace/Pranav's-Workspace~662fa6d5-959f-4bf0-8a30-2c692fec6928/collection/45732010-d3845cca-fdad-45a4-91c3-341921314d27?action=share&source=collection_link&creator=45732010"
+	},
+	"item": [
+		{
+			"name": "Validation",
+			"item": [
+				{
+					"name": "Valid Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"Adarsh Sokke\",\r\n            \"age\": 25,\r\n            \"gender\": \"Male\",\r\n            \"mobile\": \"9008733243\",\r\n            \"address\": \"Banglore\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Valid Patient",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Adarsh Sokke\",\r\n            \"age\": 25,\r\n            \"gender\": \"Male\",\r\n            \"mobile\": \"9008733243\",\r\n            \"address\": \"Banglore\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"id\": \"685bb0a2423e8f4af242260b\",\r\n    \"name\": \"Adarsh Sokke\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"9008733243\",\r\n    \"address\": \"Banglore\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Empty Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"\",\r\n            \"age\": 25,\r\n            \"gender\": \"Male\",\r\n            \"mobile\": \"1234567890\",\r\n            \"address\": \"Pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Empty Name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"\",\r\n            \"age\": 25,\r\n            \"gender\": \"Male\",\r\n            \"mobile\": \"1234567890\",\r\n            \"address\": \"Pune\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "[\n    \"Name is required\",\n    \"Name must be atleast 2 characters\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Name too Short",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"B\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"Pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Name too Short",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"B\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"Pune\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "[\r\n    \"Name must be atleast 2 characters\"\r\n]"
+						}
+					]
+				},
+				{
+					"name": "Mobile too Short",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345670\",\r\n    \"address\": \"Pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Mobile too Short",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345670\",\r\n    \"address\": \"Pune\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:47:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Mobile number must be 10 digits\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Mobile too long",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"123456703453\",\r\n    \"address\": \"Pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Mobile too long",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 25,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"123456703453\",\r\n    \"address\": \"Pune\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:48:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Mobile number must be 10 digits\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Invalid Age (negative)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": -1,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"Pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalid Age (negative)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": -1,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"Pune\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:48:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Age must be at least 0\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Invalid Age",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 130,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"Pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalid Age",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 130,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"Pune\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:48:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Age must be at most 120\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Address Missing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Address Missing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bob\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"1234567890\",\r\n    \"address\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:49:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Address is required\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Multiple errors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Multiple errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:49:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    \"Address is required\",\n    \"Name is required\",\n    \"Name must be atleast 2 characters\",\n    \"Mobile number must be 10 digits\"\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Exception Handling",
+			"item": [
+				{
+					"name": "Get Existing Patient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"685a66903b96e826c5804ce7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Existing Patient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"685a66903b96e826c5804ce7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:51:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"685a66903b96e826c5804ce7\",\n    \"name\": \"Jenny Wilson\",\n    \"age\": 29,\n    \"gender\": \"Female\",\n    \"mobile\": \"9876543219\",\n    \"address\": \"Kolkata\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Non-Existing Patient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"685a66903b96e826c5804ce20"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Non-Existing Patient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"685a66903b96e826c5804ce20"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:52:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Patient with ID 685a66903b96e826c5804ce20 not found"
+						}
+					]
+				},
+				{
+					"name": "Updating Existing Patient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jenny Wilson\",\r\n    \"age\": 29,\r\n    \"gender\": \"Female\",\r\n    \"mobile\": \"9876543219\",\r\n    \"address\": \"Delhi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"685a66903b96e826c5804ce7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Updating Existing Patient",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Jenny Wilson\",\r\n    \"age\": 29,\r\n    \"gender\": \"Female\",\r\n    \"mobile\": \"9876543219\",\r\n    \"address\": \"Delhi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"685a66903b96e826c5804ce7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:53:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"685a66903b96e826c5804ce7\",\n    \"name\": \"Jenny Wilson\",\n    \"age\": 29,\n    \"gender\": \"Female\",\n    \"mobile\": \"9876543219\",\n    \"address\": \"Delhi\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Updating Non-Existing Patient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hannah Kim\",\r\n    \"age\": 33,\r\n    \"gender\": \"Female\",\r\n    \"mobile\": \"9876543217\",\r\n    \"address\": \"Delhi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"685a66903b96e826c5804ce5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Updating Non-Existing Patient",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hannah Kim\",\r\n    \"age\": 33,\r\n    \"gender\": \"Female\",\r\n    \"mobile\": \"9876543217\",\r\n    \"address\": \"Delhi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"685a66903b96e826c5804ce5"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:53:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Patient with ID 685a66903b96e826c5804ce5 not found"
+						}
+					]
+				},
+				{
+					"name": "Deleting Existing Patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"685a66903b96e826c5804ce7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Deleting Existing Patient",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"685a66903b96e826c5804ce7"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:54:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Deleting Non-Existing Patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/patients/685a66903b96e826c5804c3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"685a66903b96e826c5804c3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Deleting Non-Existing Patient",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/patients/685a66903b96e826c5804c3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"685a66903b96e826c5804c3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:54:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Get all Patients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all Patients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:55:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"685a66903b96e826c5804cde\",\n        \"name\": \"Alice Smith\",\n        \"age\": 28,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543210\",\n        \"address\": \"Delhi\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cdf\",\n        \"name\": \"Bob Johnson\",\n        \"age\": 35,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543211\",\n        \"address\": \"Mumbai\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce0\",\n        \"name\": \"Charlie Brown\",\n        \"age\": 40,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543212\",\n        \"address\": \"Chennai\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce1\",\n        \"name\": \"Daisy Miller\",\n        \"age\": 22,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543213\",\n        \"address\": \"Pune\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce2\",\n        \"name\": \"Ethan Clark\",\n        \"age\": 30,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543214\",\n        \"address\": \"Hyderabad\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce3\",\n        \"name\": \"Fiona Davis\",\n        \"age\": 27,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543215\",\n        \"address\": \"Bangalore\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce4\",\n        \"name\": \"George Lee\",\n        \"age\": 45,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543216\",\n        \"address\": \"Ahmedabad\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce6\",\n        \"name\": \"Ian Thomas\",\n        \"age\": 26,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543218\",\n        \"address\": \"Jaipur\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce8\",\n        \"name\": \"Kevin Hall\",\n        \"age\": 31,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543220\",\n        \"address\": \"Lucknow\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce9\",\n        \"name\": \"Laura Scott\",\n        \"age\": 38,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543221\",\n        \"address\": \"Bhopal\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cea\",\n        \"name\": \"Mike Turner\",\n        \"age\": 44,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543222\",\n        \"address\": \"Patna\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ceb\",\n        \"name\": \"Nina Reed\",\n        \"age\": 24,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543223\",\n        \"address\": \"Ranchi\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cec\",\n        \"name\": \"Oscar White\",\n        \"age\": 37,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543224\",\n        \"address\": \"Raipur\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ced\",\n        \"name\": \"Priya Nair\",\n        \"age\": 32,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543225\",\n        \"address\": \"Kochi\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cee\",\n        \"name\": \"Qasim Ali\",\n        \"age\": 41,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543226\",\n        \"address\": \"Indore\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cef\",\n        \"name\": \"Riya Kapoor\",\n        \"age\": 29,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543227\",\n        \"address\": \"Noida\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf0\",\n        \"name\": \"Sanjay Mehta\",\n        \"age\": 36,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543228\",\n        \"address\": \"Gurgaon\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf1\",\n        \"name\": \"Tina Roy\",\n        \"age\": 27,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543229\",\n        \"address\": \"Chandigarh\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf2\",\n        \"name\": \"Umar Sheikh\",\n        \"age\": 39,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543230\",\n        \"address\": \"Srinagar\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf3\",\n        \"name\": \"Vanya Rao\",\n        \"age\": 23,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543231\",\n        \"address\": \"Vijayawada\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf4\",\n        \"name\": \"Wasim Khan\",\n        \"age\": 42,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543232\",\n        \"address\": \"Nagpur\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf5\",\n        \"name\": \"Xena Paul\",\n        \"age\": 34,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543233\",\n        \"address\": \"Panaji\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf6\",\n        \"name\": \"Yash Verma\",\n        \"age\": 30,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543234\",\n        \"address\": \"Thane\"\n    },\n    {\n        \"id\": \"685ba1bd423e8f4af2422609\",\n        \"name\": \"Pranav\",\n        \"age\": 20,\n        \"gender\": \"male\",\n        \"mobile\": \"9876543219\",\n        \"address\": \"Kolkata\"\n    },\n    {\n        \"id\": \"685ba524423e8f4af242260a\",\n        \"name\": \"Adarsh Sokke\",\n        \"age\": 25,\n        \"gender\": \"Male\",\n        \"mobile\": \"9008733243\",\n        \"address\": \"Banglore\"\n    },\n    {\n        \"id\": \"685bb0a2423e8f4af242260b\",\n        \"name\": \"Adarsh Sokke\",\n        \"age\": 25,\n        \"gender\": \"Male\",\n        \"mobile\": \"9008733243\",\n        \"address\": \"Banglore\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Search by Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients?name=ra",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ra"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search by Name",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients?name=ra",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "ra"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:56:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"685a66903b96e826c5804ce9\",\n        \"name\": \"Laura Scott\",\n        \"age\": 38,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543221\",\n        \"address\": \"Bhopal\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf3\",\n        \"name\": \"Vanya Rao\",\n        \"age\": 23,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543231\",\n        \"address\": \"Vijayawada\"\n    },\n    {\n        \"id\": \"685ba1bd423e8f4af2422609\",\n        \"name\": \"Pranav\",\n        \"age\": 20,\n        \"gender\": \"male\",\n        \"mobile\": \"9876543219\",\n        \"address\": \"Kolkata\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Search by Gender",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients?gender=Male",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "Male"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search by Gender",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients?gender=Male",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients"
+									],
+									"query": [
+										{
+											"key": "gender",
+											"value": "Male"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:56:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"685a66903b96e826c5804cdf\",\n        \"name\": \"Bob Johnson\",\n        \"age\": 35,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543211\",\n        \"address\": \"Mumbai\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce0\",\n        \"name\": \"Charlie Brown\",\n        \"age\": 40,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543212\",\n        \"address\": \"Chennai\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce2\",\n        \"name\": \"Ethan Clark\",\n        \"age\": 30,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543214\",\n        \"address\": \"Hyderabad\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce4\",\n        \"name\": \"George Lee\",\n        \"age\": 45,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543216\",\n        \"address\": \"Ahmedabad\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce6\",\n        \"name\": \"Ian Thomas\",\n        \"age\": 26,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543218\",\n        \"address\": \"Jaipur\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce8\",\n        \"name\": \"Kevin Hall\",\n        \"age\": 31,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543220\",\n        \"address\": \"Lucknow\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cea\",\n        \"name\": \"Mike Turner\",\n        \"age\": 44,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543222\",\n        \"address\": \"Patna\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cec\",\n        \"name\": \"Oscar White\",\n        \"age\": 37,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543224\",\n        \"address\": \"Raipur\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cee\",\n        \"name\": \"Qasim Ali\",\n        \"age\": 41,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543226\",\n        \"address\": \"Indore\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf0\",\n        \"name\": \"Sanjay Mehta\",\n        \"age\": 36,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543228\",\n        \"address\": \"Gurgaon\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf2\",\n        \"name\": \"Umar Sheikh\",\n        \"age\": 39,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543230\",\n        \"address\": \"Srinagar\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf4\",\n        \"name\": \"Wasim Khan\",\n        \"age\": 42,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543232\",\n        \"address\": \"Nagpur\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf6\",\n        \"name\": \"Yash Verma\",\n        \"age\": 30,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543234\",\n        \"address\": \"Thane\"\n    },\n    {\n        \"id\": \"685ba1bd423e8f4af2422609\",\n        \"name\": \"Pranav\",\n        \"age\": 20,\n        \"gender\": \"male\",\n        \"mobile\": \"9876543219\",\n        \"address\": \"Kolkata\"\n    },\n    {\n        \"id\": \"685ba524423e8f4af242260a\",\n        \"name\": \"Adarsh Sokke\",\n        \"age\": 25,\n        \"gender\": \"Male\",\n        \"mobile\": \"9008733243\",\n        \"address\": \"Banglore\"\n    },\n    {\n        \"id\": \"685bb0a2423e8f4af242260b\",\n        \"name\": \"Adarsh Sokke\",\n        \"age\": 25,\n        \"gender\": \"Male\",\n        \"mobile\": \"9008733243\",\n        \"address\": \"Banglore\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Search by Name & Gender",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients?name=an&gender=Female",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "an"
+								},
+								{
+									"key": "gender",
+									"value": "Female"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search by Name & Gender",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"age\": 10,\r\n    \"gender\": \"Male\",\r\n    \"mobile\": \"12345678\",\r\n    \"address\": \"\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients?name=an&gender=Female",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "an"
+										},
+										{
+											"key": "gender",
+											"value": "Female"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:57:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"685a66903b96e826c5804cf3\",\n        \"name\": \"Vanya Rao\",\n        \"age\": 23,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543231\",\n        \"address\": \"Vijayawada\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pagination",
+			"item": [
+				{
+					"name": "Default (page = 0 | Size = 5)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/patients/paged",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"paged"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default (page = 0 | Size = 5)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/patients/paged",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"paged"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:57:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": \"685a66903b96e826c5804cde\",\n            \"name\": \"Alice Smith\",\n            \"age\": 28,\n            \"gender\": \"Female\",\n            \"mobile\": \"9876543210\",\n            \"address\": \"Delhi\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804cdf\",\n            \"name\": \"Bob Johnson\",\n            \"age\": 35,\n            \"gender\": \"Male\",\n            \"mobile\": \"9876543211\",\n            \"address\": \"Mumbai\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804ce0\",\n            \"name\": \"Charlie Brown\",\n            \"age\": 40,\n            \"gender\": \"Male\",\n            \"mobile\": \"9876543212\",\n            \"address\": \"Chennai\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804ce1\",\n            \"name\": \"Daisy Miller\",\n            \"age\": 22,\n            \"gender\": \"Female\",\n            \"mobile\": \"9876543213\",\n            \"address\": \"Pune\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804ce2\",\n            \"name\": \"Ethan Clark\",\n            \"age\": 30,\n            \"gender\": \"Male\",\n            \"mobile\": \"9876543214\",\n            \"address\": \"Hyderabad\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"pageNumber\": 0,\n        \"pageSize\": 5,\n        \"unpaged\": false,\n        \"paged\": true\n    },\n    \"totalPages\": 6,\n    \"totalElements\": 26,\n    \"last\": false,\n    \"size\": 5,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"numberOfElements\": 5,\n    \"first\": true,\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Page 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/patients/paged?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Page 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/patients/paged?page=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"paged"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:57:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": \"685a66903b96e826c5804ce3\",\n            \"name\": \"Fiona Davis\",\n            \"age\": 27,\n            \"gender\": \"Female\",\n            \"mobile\": \"9876543215\",\n            \"address\": \"Bangalore\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804ce4\",\n            \"name\": \"George Lee\",\n            \"age\": 45,\n            \"gender\": \"Male\",\n            \"mobile\": \"9876543216\",\n            \"address\": \"Ahmedabad\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804ce6\",\n            \"name\": \"Ian Thomas\",\n            \"age\": 26,\n            \"gender\": \"Male\",\n            \"mobile\": \"9876543218\",\n            \"address\": \"Jaipur\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804ce8\",\n            \"name\": \"Kevin Hall\",\n            \"age\": 31,\n            \"gender\": \"Male\",\n            \"mobile\": \"9876543220\",\n            \"address\": \"Lucknow\"\n        },\n        {\n            \"id\": \"685a66903b96e826c5804ce9\",\n            \"name\": \"Laura Scott\",\n            \"age\": 38,\n            \"gender\": \"Female\",\n            \"mobile\": \"9876543221\",\n            \"address\": \"Bhopal\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 5,\n        \"pageNumber\": 1,\n        \"pageSize\": 5,\n        \"unpaged\": false,\n        \"paged\": true\n    },\n    \"totalPages\": 6,\n    \"totalElements\": 26,\n    \"last\": false,\n    \"size\": 5,\n    \"number\": 1,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"numberOfElements\": 5,\n    \"first\": false,\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Last Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/patients/paged?page=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Last Page",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/patients/paged?page=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"paged"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:57:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": \"685bb0a2423e8f4af242260b\",\n            \"name\": \"Adarsh Sokke\",\n            \"age\": 25,\n            \"gender\": \"Male\",\n            \"mobile\": \"9008733243\",\n            \"address\": \"Banglore\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 25,\n        \"pageNumber\": 5,\n        \"pageSize\": 5,\n        \"unpaged\": false,\n        \"paged\": true\n    },\n    \"totalPages\": 6,\n    \"totalElements\": 26,\n    \"last\": true,\n    \"size\": 5,\n    \"number\": 5,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"numberOfElements\": 1,\n    \"first\": false,\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Empty Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/patients/paged?page=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Empty Page",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/patients/paged?page=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"paged"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Jun 2025 08:58:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [],\n    \"pageable\": {\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 500,\n        \"pageNumber\": 100,\n        \"pageSize\": 5,\n        \"unpaged\": false,\n        \"paged\": true\n    },\n    \"totalPages\": 6,\n    \"totalElements\": 26,\n    \"last\": true,\n    \"size\": 5,\n    \"number\": 100,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"numberOfElements\": 0,\n    \"first\": false,\n    \"empty\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Protected Requests",
+					"item": [
+						{
+							"name": "Get Patients",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Patients",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:8080/patients",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"patients"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 03 Jul 2025 14:03:47 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"685a66903b96e826c5804cde\",\n        \"name\": \"Alice Smith\",\n        \"age\": 28,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543210\",\n        \"address\": \"Delhi\",\n        \"documentName\": \"Microservices with spring boot and sping cloud.pdf\",\n        \"documentPath\": \"http://localhost:9000/patient-documents/Microservices with spring boot and sping cloud.pdf\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cdf\",\n        \"name\": \"Bob Johnson\",\n        \"age\": 35,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543211\",\n        \"address\": \"Mumbai\",\n        \"documentName\": \"Microservices_with_spring_boot_and_sping_cloud.pdf\",\n        \"documentPath\": \"C:\\\\Users\\\\punnu\\\\OneDrive\\\\Desktop\\\\patient\\\\uploads\\\\Microservices_with_spring_boot_and_sping_cloud.pdf\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce0\",\n        \"name\": \"Charlie Brown\",\n        \"age\": 40,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543212\",\n        \"address\": \"Chennai\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce1\",\n        \"name\": \"Daisy Miller\",\n        \"age\": 22,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543213\",\n        \"address\": \"Pune\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce2\",\n        \"name\": \"Ethan Clark\",\n        \"age\": 30,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543214\",\n        \"address\": \"Hyderabad\",\n        \"documentName\": \"Microservices_with_spring_boot_and_sping_cloud.pdf\",\n        \"documentPath\": \"C:\\\\Users\\\\punnu\\\\OneDrive\\\\Desktop\\\\patient\\\\uploads\\\\Microservices_with_spring_boot_and_sping_cloud.pdf\"\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce3\",\n        \"name\": \"Fiona Davis\",\n        \"age\": 27,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543215\",\n        \"address\": \"Bangalore\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce4\",\n        \"name\": \"George Lee\",\n        \"age\": 45,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543216\",\n        \"address\": \"Ahmedabad\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce6\",\n        \"name\": \"Ian Thomas\",\n        \"age\": 26,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543218\",\n        \"address\": \"Jaipur\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce8\",\n        \"name\": \"Kevin Hall\",\n        \"age\": 31,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543220\",\n        \"address\": \"Lucknow\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ce9\",\n        \"name\": \"Laura Scott\",\n        \"age\": 38,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543221\",\n        \"address\": \"Bhopal\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cea\",\n        \"name\": \"Mike Turner\",\n        \"age\": 44,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543222\",\n        \"address\": \"Patna\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ceb\",\n        \"name\": \"Nina Reed\",\n        \"age\": 24,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543223\",\n        \"address\": \"Ranchi\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cec\",\n        \"name\": \"Oscar White\",\n        \"age\": 37,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543224\",\n        \"address\": \"Raipur\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804ced\",\n        \"name\": \"Priya Nair\",\n        \"age\": 32,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543225\",\n        \"address\": \"Kochi\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cee\",\n        \"name\": \"Qasim Ali\",\n        \"age\": 41,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543226\",\n        \"address\": \"Indore\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cef\",\n        \"name\": \"Riya Kapoor\",\n        \"age\": 29,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543227\",\n        \"address\": \"Noida\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf0\",\n        \"name\": \"Sanjay Mehta\",\n        \"age\": 36,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543228\",\n        \"address\": \"Gurgaon\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf1\",\n        \"name\": \"Tina Roy\",\n        \"age\": 27,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543229\",\n        \"address\": \"Chandigarh\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf2\",\n        \"name\": \"Umar Sheikh\",\n        \"age\": 39,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543230\",\n        \"address\": \"Srinagar\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf3\",\n        \"name\": \"Vanya Rao\",\n        \"age\": 23,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543231\",\n        \"address\": \"Vijayawada\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf4\",\n        \"name\": \"Wasim Khan\",\n        \"age\": 42,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543232\",\n        \"address\": \"Nagpur\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf5\",\n        \"name\": \"Xena Paul\",\n        \"age\": 34,\n        \"gender\": \"Female\",\n        \"mobile\": \"9876543233\",\n        \"address\": \"Panaji\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685a66903b96e826c5804cf6\",\n        \"name\": \"Yash Verma\",\n        \"age\": 30,\n        \"gender\": \"Male\",\n        \"mobile\": \"9876543234\",\n        \"address\": \"Thane\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685ba1bd423e8f4af2422609\",\n        \"name\": \"Pranav\",\n        \"age\": 20,\n        \"gender\": \"male\",\n        \"mobile\": \"9876543219\",\n        \"address\": \"Kolkata\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685ba524423e8f4af242260a\",\n        \"name\": \"Adarsh Sokke\",\n        \"age\": 25,\n        \"gender\": \"Male\",\n        \"mobile\": \"9008733243\",\n        \"address\": \"Banglore\",\n        \"documentName\": null,\n        \"documentPath\": null\n    },\n    {\n        \"id\": \"685bb0a2423e8f4af242260b\",\n        \"name\": \"Adarsh Sokke\",\n        \"age\": 25,\n        \"gender\": \"Male\",\n        \"mobile\": \"9008733243\",\n        \"address\": \"Banglore\",\n        \"documentName\": null,\n        \"documentPath\": null\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Post Patient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Abc\",\r\n        \"age\": 28,\r\n        \"gender\": \"Male\",\r\n        \"mobile\": \"9876543222\",\r\n        \"address\": \"Pune\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Post patient",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"name\": \"Abc\",\r\n        \"age\": 28,\r\n        \"gender\": \"Male\",\r\n        \"mobile\": \"9876543222\",\r\n        \"address\": \"Pune\"\r\n    }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/patients",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"patients"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 03 Jul 2025 14:07:15 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"68653d13e4125827562ac1ea\",\n    \"name\": \"Abc\",\n    \"age\": 28,\n    \"gender\": \"Male\",\n    \"mobile\": \"9876543222\",\n    \"address\": \"Pune\",\n    \"documentName\": null,\n    \"documentPath\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Patient",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Abcd\",\r\n        \"age\": 28,\r\n        \"gender\": \"Male\",\r\n        \"mobile\": \"9876543222\",\r\n        \"address\": \"Pune\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/68653e18e4125827562ac1eb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"68653e18e4125827562ac1eb"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Post patient",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"name\": \"Abc\",\r\n        \"age\": 28,\r\n        \"gender\": \"Male\",\r\n        \"mobile\": \"9876543222\",\r\n        \"address\": \"Pune\"\r\n    }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/patients",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"patients"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 03 Jul 2025 14:07:15 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"68653d13e4125827562ac1ea\",\n    \"name\": \"Abc\",\n    \"age\": 28,\n    \"gender\": \"Male\",\n    \"mobile\": \"9876543222\",\n    \"address\": \"Pune\",\n    \"documentName\": null,\n    \"documentPath\": null\n}"
+								},
+								{
+									"name": "Delete Patient",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"name\": \"Abcd\",\r\n        \"age\": 28,\r\n        \"gender\": \"Male\",\r\n        \"mobile\": \"9876543222\",\r\n        \"address\": \"Pune\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/patients/68653e18e4125827562ac1eb",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"patients",
+												"68653e18e4125827562ac1eb"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 03 Jul 2025 14:12:09 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Put Patient",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Abhishek\",\r\n        \"age\": 28,\r\n        \"gender\": \"Male\",\r\n        \"mobile\": \"9876543222\",\r\n        \"address\": \"Pune\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/patients/68653d13e4125827562ac1ea",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"patients",
+										"68653d13e4125827562ac1ea"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Put Patient",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"name\": \"Abhishek\",\r\n        \"age\": 28,\r\n        \"gender\": \"Male\",\r\n        \"mobile\": \"9876543222\",\r\n        \"address\": \"Pune\"\r\n    }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/patients/68653d13e4125827562ac1ea",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"patients",
+												"68653d13e4125827562ac1ea"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 03 Jul 2025 14:10:38 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"68653d13e4125827562ac1ea\",\n    \"name\": \"Abhishek\",\n    \"age\": 28,\n    \"gender\": \"Male\",\n    \"mobile\": \"9876543222\",\n    \"address\": \"Pune\",\n    \"documentName\": null,\n    \"documentPath\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sign Up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/admin/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 13:54:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Admin registered successfully"
+						}
+					]
+				},
+				{
+					"name": "Authentication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Authentication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/authenticate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"authenticate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 13:57:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTQ2NDY0MSwiZXhwIjoxNzUxNTAwNjQxfQ.BBmr1kg4AbmkO8ZxEB5RQVVromlRwgGmt1XCW0HWMnU"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "File Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "Microservices with spring boot and sping cloud.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce3/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"685a66903b96e826c5804ce3",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "File Upload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "Microservices with spring boot and sping cloud.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/685a66903b96e826c5804ce3/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"685a66903b96e826c5804ce3",
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 03 Jul 2025 14:16:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "File uploaded to: http://localhost:9000/patient-documents/Microservices with spring boot and sping cloud.pdf"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTQ2NDY0MSwiZXhwIjoxNzUxNTAwNjQxfQ.BBmr1kg4AbmkO8ZxEB5RQVVromlRwgGmt1XCW0HWMnU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
