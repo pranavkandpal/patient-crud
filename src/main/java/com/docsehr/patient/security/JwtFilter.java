@@ -58,7 +58,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
             } catch (Exception e) {
                 System.out.println("JWT Filter: Token validation failed - " + e.getMessage());
-                SecurityContextHolder.clearContext(); // Optional: clear context on failure
+                SecurityContextHolder.clearContext();
             }
         }
 
