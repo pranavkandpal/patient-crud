@@ -1,5 +1,6 @@
 package com.docsehr.patient.controller;
 
+import com.docsehr.patient.MinIO.MinioService;
 import com.docsehr.patient.exception.PatientNotFoundException;
 import com.docsehr.patient.repository.PatientRepository;
 import com.docsehr.patient.model.Patient;
@@ -23,6 +24,9 @@ public class PatientController {
 
     @Autowired
     private PatientRepository patientRepo;
+
+    @Autowired
+    private MinioService minioService;
 
     @GetMapping
     public ResponseEntity<List<Patient>> searchPatients(
@@ -84,33 +88,20 @@ public class PatientController {
         }
 
         try {
-            //Cleaning file name & uploading to local dir
-            String fileName = file.getOriginalFilename().replaceAll("\\s+", "_");
+            String fileUrl = minioService.uploadFile(file, file.getOriginalFilename());
 
-            String uploadDir = System.getProperty("user.dir") + File.separator + "uploads";
-            File folder = new File(uploadDir);
-            if (!folder.exists()) {
-                folder.mkdirs();
-            }
-
-            File savedFile = new File(folder, fileName);
-            file.transferTo(savedFile);
-
-            // to DB
             Patient patient = optionalPatient.get();
-            patient.setDocumentName(fileName);
-            patient.setDocumentPath(savedFile.getAbsolutePath());
+            patient.setDocumentName(file.getOriginalFilename());
+            patient.setDocumentPath(fileUrl);
             patientRepo.save(patient);
 
-            return ResponseEntity.ok("File uploaded and saved to patient");
+            return ResponseEntity.ok("File uploaded to: " + fileUrl);
 
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Failed to save file");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload file");
         }
     }
-
 
 
     @PutMapping("/{id}")
